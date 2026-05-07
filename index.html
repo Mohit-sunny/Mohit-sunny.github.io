@@ -516,13 +516,197 @@ function toggleChat(){
  bot.style.display=bot.style.display==='flex'?'none':'flex';
 }
 function sendMsg(){
+
  let input=document.getElementById('userInput');
  let body=document.getElementById('chatBody');
- body.innerHTML+=`<p><b>You:</b> ${input.value}</p>`;
- body.innerHTML+=`<p><b>Bot:</b> Mohit is an AI/ML student building projects.</p>`;
+
+ let userText=input.value;
+ let msg=userText.toLowerCase();
+
+ body.innerHTML += `<p><b>You:</b> ${userText}</p>`;
+
+ let reply="Sorry, I don't understand that yet. Try asking about Mohit's skills, projects, certificates, education, AWS, AI, contact details, or career goals.";
+
+ // GREETINGS
+ if(msg.includes("hi") || msg.includes("hello") || msg.includes("hey")){
+   reply="Hello 👋 Welcome to Mohit's AI Portfolio Assistant. Ask me anything about skills, projects, certifications, resume, career goals, internships, or contact details.";
+ }
+
+ // NAME
+ else if(msg.includes("your name") || msg.includes("who is mohit")){
+   reply="My name is Mohit. I am a Computer Science Engineering student passionate about AI/ML, Cloud Computing, Web Development, and IoT.";
+ }
+
+ // ABOUT
+ else if(msg.includes("about") || msg.includes("who are you")){
+   reply="Mohit is a BTech CSE student with skills in Python, Java, AWS, Full Stack Development, AI/ML, Power Platform, and IoT technologies.";
+ }
+
+ // AGE
+ else if(msg.includes("age") || msg.includes("old are you")){
+   reply="Mohit is currently pursuing BTech and continuously building real-world technical projects.";
+ }
+
+ // EDUCATION
+ else if(msg.includes("education") || msg.includes("college") || msg.includes("degree") || msg.includes("btech")){
+   reply="Mohit is currently pursuing a Bachelor of Technology (BTech) in Computer Science Engineering.";
+ }
+
+ // LOCATION
+ else if(msg.includes("location") || msg.includes("from where") || msg.includes("where are you from")){
+   reply="Mohit is from India and open to opportunities both in India and abroad.";
+ }
+
+ // SKILLS
+ else if(msg.includes("skills") || msg.includes("technologies")){
+   reply="Mohit's skills include Python, Java, C, HTML, CSS, JavaScript, SQL, MongoDB, AWS, Power Platform, AI/ML, IoT, and Full Stack Development.";
+ }
+
+ // PROGRAMMING
+ else if(msg.includes("python")){
+   reply="Mohit uses Python for AI/ML projects, automation, backend development, and chatbot applications.";
+ }
+
+ else if(msg.includes("java")){
+   reply="Mohit has Java programming knowledge and uses it for object-oriented programming concepts.";
+ }
+
+ else if(msg.includes("c language") || msg.includes("c programming")){
+   reply="Mohit has strong fundamentals in C programming including problem-solving and logic building.";
+ }
+
+ // WEB DEV
+ else if(msg.includes("web development") || msg.includes("frontend") || msg.includes("full stack")){
+   reply="Mohit builds responsive websites using HTML, CSS, JavaScript, and modern UI concepts.";
+ }
+
+ // DATABASE
+ else if(msg.includes("sql") || msg.includes("database") || msg.includes("mongodb")){
+   reply="Mohit works with SQL databases and has basic knowledge of MongoDB for NoSQL applications.";
+ }
+
+ // AWS
+ else if(msg.includes("aws") || msg.includes("cloud")){
+   reply="Mohit has AWS knowledge including EC2, S3, IAM, Lambda, RDS, and cloud deployment concepts.";
+ }
+
+ // AI
+ else if(msg.includes("ai") || msg.includes("machine learning") || msg.includes("ml")){
+   reply="Mohit is focused on AI/ML development and building intelligent systems like AI DocBot and educational assistants.";
+ }
+
+ // PROJECTS
+ else if(msg.includes("work") || msg.includes("projects") || msg.includes("portfolio projects")){
+   reply="Mohit's major projects include AI DocBot, EDUBOT, IoT Gas Leakage Detector, and Maintenance & Calibration Tracking System.";
+ }
+
+ // EDUBOT
+ else if(msg.includes("edubot")){
+   reply="EDUBOT is an educational chatbot developed to assist students with learning resources and intelligent responses.";
+ }
+
+ // DOCBOT
+ else if(msg.includes("docbot") || msg.includes("ai doctor")){
+   reply="AI DocBot is a healthcare chatbot that analyzes symptoms and medical reports to provide basic recommendations using AI.";
+ }
+
+ // IOT
+ else if(msg.includes("iot") || msg.includes("gas leakage")){
+   reply="Mohit built an IoT Gas Leakage Detector using sensors and microcontrollers to improve safety monitoring.";
+ }
+
+ // POWER PLATFORM
+ else if(msg.includes("power apps") || msg.includes("power automate") || msg.includes("power bi") || msg.includes("sharepoint")){
+   reply="Mohit developed a Maintenance & Calibration Tracking System using Microsoft Power Platform technologies.";
+ }
+
+ // INTERNSHIPS
+ else if(msg.includes("internship") || msg.includes("experience")){
+   reply="Mohit completed internships in AWS Cloud, Generative AI, and AI/ML through industry training programs.";
+ }
+
+ // CERTIFICATES
+ else if(msg.includes("certificate") || msg.includes("certification")){
+   reply="Mohit earned certifications in AWS Cloud, Generative AI, Python Essentials, Networking, and AI/ML technologies.";
+ }
+
+ // TEAM LEADER
+ else if(msg.includes("leader") || msg.includes("team")){
+   reply="Mohit is also a team leader for his final year project and has strong communication and leadership skills.";
+ }
+
+ // CONTENT CREATOR
+ else if(msg.includes("content creator") || msg.includes("youtube")){
+   reply="Mohit is also a content creator who enjoys sharing knowledge and technology-related content.";
+ }
+
+ // LANGUAGES
+ else if(msg.includes("languages") || msg.includes("speak")){
+   reply="Mohit can communicate in English and Telugu and is currently learning Hindi and Korean.";
+ }
+
+ // CAREER
+ else if(msg.includes("goal") || msg.includes("future") || msg.includes("career")){
+   reply="Mohit's goal is to build impactful AI-driven solutions and grow as a global software developer.";
+ }
+
+ // JOB
+ else if(msg.includes("hire") || msg.includes("job") || msg.includes("open to work")){
+   reply="Mohit is open to internships and full-time opportunities in AI/ML, Cloud, Software Development, and Web Development.";
+ }
+
+ // RESUME
+ else if(msg.includes("resume") || msg.includes("cv")){
+   reply='You can download Mohit’s resume using the "Download Resume" button on the homepage.';
+ }
+
+ // CONTACT
+ else if(msg.includes("contact") || msg.includes("email") || msg.includes("phone")){
+   reply="You can contact Mohit via email at mohithnela999@gmail.com or through LinkedIn and GitHub.";
+ }
+
+ // GITHUB
+ else if(msg.includes("github")){
+   reply="GitHub Profile: https://github.com/Mohit-sunny";
+ }
+
+ // LINKEDIN
+ else if(msg.includes("linkedin")){
+   reply="LinkedIn Profile: https://www.linkedin.com/in/mohit-nela-7b1a2a407";
+ }
+
+ // INSTAGRAM
+ else if(msg.includes("instagram")){
+   reply="Instagram: @sunny_2006___";
+ }
+
+ // HACKERRANK
+ else if(msg.includes("hackerrank")){
+   reply="Mohit also practices coding and problem-solving on HackerRank.";
+ }
+
+ // THANKS
+ else if(msg.includes("thank")){
+   reply="You're welcome 😊";
+ }
+
+ // BYE
+ else if(msg.includes("bye")){
+   reply="Goodbye 👋 Thanks for visiting Mohit's portfolio.";
+ }
+
+ body.innerHTML += `<p><b>Bot:</b> ${reply}</p>`;
+
  input.value="";
+
  body.scrollTop=body.scrollHeight;
 }
+/* ADD THIS HERE */
+document.getElementById("userInput").addEventListener("keypress",function(e){
+ if(e.key==="Enter"){
+   sendMsg();
+ }
+});
 </script>
 
 </body>
